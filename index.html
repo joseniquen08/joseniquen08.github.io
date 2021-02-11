@@ -9,6 +9,7 @@
   <link rel="shorcut" href="images/carpa.ico" />
   <link rel="icon" href="images/carpa.ico" />
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 
 <body class="bg-white dark:bg-gray-700">
@@ -90,9 +91,8 @@
               fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
               <polygon points="50,0 100,0 50,100 0,100" />
             </svg>
-      
 
-            <main class="flex items-center justify-center h-full px-4 mx-auto mt-0 lg:justify-start max-w-7xl sm:mt-12 sm:px-6 md:mt-16 lg:mt-0 lg:px-8 xl:mt-0">
+            <main class="flex items-center justify-center h-full px-4 mx-auto mt-0 lg:justify-start max-w-7xl sm:px-6 lg:px-8">
               <div class="sm:text-center lg:text-left">
                 <h1 class="mt-8 mb-8 text-5xl font-extrabold tracking-tight text-center text-gray-900 dark:text-white lg:text-left leading-titulo sm:text-5xl md:text-6xl">
                   <span class="block xl:inline">Descubre una nueva</span>
@@ -100,7 +100,7 @@
                   <span class="block xl:inline">de aprendizaje</span>
                 </h1>
                 <p class="mb-4 text-xl text-center text-gray-500 dark:text-white lg:text-left lg:mt-8 lg:text-xl sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Aprovecha la oferta del <span class="text-yellow-500 font-medium">Campamento de Python</span> por tiempo limitado: 50% de descuento
+                  Aprovecha la oferta del <span class="font-bold text-yellow-500">Campamento de Python</span> por tiempo limitado: Hasta 50% de descuento
                 </p>
                 <div class="w-full mb-6 cuenta lg:mt-4">
                   <div id="cuenta" class="flex items-center justify-center w-full text-2xl font-semibold text-yellow-500 lg:items-start lg:justify-start lg:text-3xl">
@@ -113,14 +113,12 @@
                 </div>
                 <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div class="rounded-md shadow">
-                    <a href="#"
-                      class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-yellow-500 border border-transparent rounded-md hover:bg-yellow-600 md:py-4 md:text-lg md:px-10">
+                    <a href="#" class="flex items-center justify-center w-full h-12 px-8 py-3 text-base font-medium text-white bg-yellow-500 border border-transparent rounded-md sm:h-full hover:bg-yellow-600 md:py-4 md:text-lg md:px-10">
                       ¡Lo quiero!
                     </a>
                   </div>
                   <div class="mt-3 sm:mt-0 sm:ml-3">
-                    <a href="#"
-                      class="flex flex-col items-center justify-center w-full px-8 py-1 text-base font-medium text-gray-600 border border-gray-500 rounded-md dark:text-white dark:border-white hover:bg-gray-500 hover:text-white md:py-4 md:text-lg md:px-10">
+                    <a href="#" class="flex items-center justify-center w-full h-12 px-8 py-2 text-base font-medium text-gray-600 border border-gray-500 rounded-md sm:h-full sm:flex-col dark:text-white dark:border-white hover:bg-gray-500 hover:text-white md:py-2 md:text-lg md:px-10">
                       <p class="">Más información</p><p class="text-sm">(Python)</p>
                     </a>
                   </div>
@@ -133,6 +131,30 @@
           <img class="object-cover w-full bg-bottom lg:w-full lg:h-full"
             src="/images/header-code-2.webp"
             alt="">
+        </div>
+        <div class="fixed z-40 bottom-9 right-8">
+          <div class="flex items-center justify-center w-16 h-16 rounded-full cursor-pointer wsp-button bg-greencode-wsp">
+            <i class="relative text-4xl text-white fab fa-whatsapp"></i>
+          </div>
+        </div>
+        <style>
+          .active{
+            transform: translate(0) !important;
+          }
+        </style>
+        <div class="fixed z-40 overflow-hidden bg-white contenedor-chat w-80 h-72 bottom-28 right-10 rounded-xl" style="transition: transform 0.3s ease-in-out;transform: translate(115%);">
+          <div class="relative flex flex-col justify-between w-full h-full bg-cover contenido-chat" style="background-image: url(images/wsp-wallpaper.jpg);">
+            <div class="z-10 flex items-center justify-start p-3 bg-gray-300 dark:bg-gray-600 top">
+              <div class="absolute cursor-pointer close-button top-5 right-5"><i class="text-2xl text-black fas fa-times dark:text-white"></i></div><img src="images/carpa.png" class="h-10 p-1 mr-3 bg-white border border-white w-11" style="border-radius: 50%;"/>
+              <div class="flex flex-col estado-chat"><strong class="block mb-1 text-lg font-medium leading-4 dark:text-white">Edullka</strong><span class="text-sm leading-3 dark:text-white">En línea</span></div>
+            </div>
+            <div class="z-10 flex items-center justify-start p-3 bg-gray-300 dark:bg-gray-600 bottom">
+              <textarea class="p-2 leading-5 bg-white border border-white border-solid outline-none appearance-none resize-none rounded-xl h-11" style="width: calc(100% - 35px);" id="mensaje" cols="30" rows="1" placeholder="Escribe un mensaje aquí"></textarea>
+              <div class="cursor-pointer send-button" id="send-button">
+                <i class="block ml-3 text-2xl transform rotate-45 dark:text-white bi bi-cursor-fill"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -241,9 +263,9 @@
           </div>
       
           <div class="mx-6 mt-10">
-            <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:gap-y-10">
+            <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-x-8 md:gap-y-10">
 
-              <div class="flex-col shadow-xl dark:bg-gray-900 rounded-xl">
+              <div class="flex-col col-span-2 border border-gray-200 shadow-xl dark:border-transparent dark:bg-gray-900 rounded-xl">
                 <div class="relative flex items-center justify-center w-full bg-gray-200 rounded-b-none dark:bg-gray-700 rounded-xl h-60">
                   <img src="/images/python.webp" alt="" class="object-contain w-48 h-48" />
                 </div>
@@ -286,7 +308,7 @@
                 </div>
               </div>
       
-              <div class="flex-col shadow-xl dark:bg-gray-900 rounded-xl">
+              <div class="flex-col col-span-2 border border-gray-300 shadow-xl opacity-60 dark:border-transparent dark:bg-gray-900 rounded-xl">
                 <div class="relative flex items-center justify-center w-full bg-gray-200 rounded-b-none dark:bg-gray-700 rounded-xl h-60">
                   <img src="/images/java.webp" alt="" class="object-contain w-48 h-48" />
                 </div>
@@ -323,13 +345,13 @@
 
                 <div class="flex pb-6 mx-4 mt-2 mb-4 space-x-3 text-sm font-medium">
                   <div class="flex flex-auto space-x-3">
-                    <button class="flex items-center justify-center w-1/2 text-white bg-yellow-500 rounded-md h-9" type="submit">Inscríbete</button>
-                    <button class="flex items-center justify-center w-1/2 border border-gray-300 rounded-md dark:text-gray-300 h-9" type="button">Información</button>
+                    <button class="flex items-center justify-center w-1/2 text-white bg-yellow-500 rounded-md opacity-50 pointer-events-none h-9" type="button">Inscríbete</button>
+                    <button class="flex items-center justify-center w-1/2 border border-gray-300 rounded-md opacity-50 pointer-events-none dark:text-gray-300 h-9" type="button">Información</button>
                   </div> <!-- DESHABILITAR -->
                 </div>
               </div>
       
-              <div class="flex-col shadow-xl dark:bg-gray-900 rounded-xl">
+              <div class="flex-col col-span-2 col-start-2 border border-gray-300 shadow-xl lg:col-start-auto opacity-60 dark:border-transparent dark:bg-gray-900 rounded-xl">
                 <div class="relative flex items-center justify-center w-full bg-gray-200 rounded-b-none dark:bg-gray-700 rounded-xl h-60">
                   <img src="/images/c.webp" alt="" class="object-contain w-48 h-48" />
                 </div>
@@ -366,8 +388,8 @@
 
                 <div class="flex pb-6 mx-4 mt-2 mb-4 space-x-3 text-sm font-medium">
                   <div class="flex flex-auto space-x-3">
-                    <button class="flex items-center justify-center w-1/2 text-white bg-yellow-500 rounded-md h-9" type="submit">Inscríbete</button>
-                    <button class="flex items-center justify-center w-1/2 border border-gray-300 rounded-md dark:text-gray-300 h-9" type="button">Información</button>
+                    <button class="flex items-center justify-center w-1/2 text-white bg-yellow-500 rounded-md opacity-50 pointer-events-none h-9" type="submit">Inscríbete</button>
+                    <button class="flex items-center justify-center w-1/2 border border-gray-300 rounded-md opacity-50 pointer-events-none dark:text-gray-300 h-9" type="button">Información</button>
                   </div><!-- DESHABILITAR -->
                 </div>
               </div>
@@ -393,9 +415,9 @@
           </div>
       
           <div class="mx-6 mt-10">
-            <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 lg:grid-cols-4 md:gap-x-8 md:gap-y-10">
+            <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-6 lg:grid-cols-8 md:gap-x-8 md:gap-y-10">
 
-              <div class="flex-col">
+              <div class="flex-col col-span-2">
                 <div class="relative flex items-center justify-center w-full h-60">
                   <img src="/images/perfil-jhomar astuyauri.webp" alt="" class="object-cover w-48 h-48 rounded-full" />
                 </div>
@@ -416,7 +438,7 @@
                 </div>
               </div>
       
-              <div class="flex-col">
+              <div class="flex-col col-span-2">
                 <div class="relative flex items-center justify-center w-full h-60">
                   <img src="/images/perfil-ednaly cuadros.webp" alt="" class="object-cover w-48 h-48 rounded-full" />
                 </div>
@@ -435,7 +457,7 @@
                 </div>
               </div>
       
-              <div class="flex-col">
+              <div class="flex-col col-span-2">
                 <div class="relative flex items-center justify-center w-full h-60">
                   <img src="/images/perfil-josé guerra.webp" alt="" class="object-cover w-48 h-48 rounded-full" />
                 </div>
@@ -455,7 +477,7 @@
                 </div>
               </div>
 
-              <div class="flex-col">
+              <div class="flex-col col-span-2">
                 <div class="relative flex items-center justify-center w-full h-60">
                   <img src="/images/perfil-pamela villacorta.webp" alt="" class="object-cover w-48 h-48 rounded-full" />
                 </div>
@@ -475,7 +497,7 @@
                 </div>
               </div>
 
-              <div class="flex-col">
+              <div class="flex-col col-span-2 lg:col-start-2">
                 <div class="relative flex items-center justify-center w-full h-60">
                   <img src="/images/perfil-josé ñiquen.webp" alt="" class="object-cover w-48 h-48 rounded-full" />
                 </div>
@@ -498,7 +520,7 @@
                 </div>
               </div>
 
-              <div class="flex-col-reverse">
+              <div class="flex-col-reverse col-span-2">
                 <div class="relative flex items-center justify-center w-full h-60">
                   <img src="/images/perfil-jhairo valladares.webp" alt="" class="object-cover w-48 h-48 rounded-full" />
                 </div>
@@ -518,7 +540,7 @@
                 </div>
               </div>
 
-              <div class="flex-col">
+              <div class="flex-col col-span-2 col-start-3 lg:col-start-auto">
                 <div class="relative flex items-center justify-center w-full h-60">
                   <img src="/images/perfil-manuel baella.webp" alt="" class="object-cover w-48 h-48 rounded-full" />
                 </div>

@@ -10,6 +10,8 @@
   <link rel="icon" href="images/carpa.ico" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 
 <body class="bg-white dark:bg-gray-800">
@@ -72,9 +74,6 @@
                   </path>
                 </svg>
               </button>
-
-              
-              
             </div>
           </div>
         </div>
@@ -90,12 +89,76 @@
           </div>
         </div>
       </nav>
+      <div class="fixed z-40 bottom-9 right-8">
+        <div class="flex items-center justify-center w-16 h-16 rounded-full cursor-pointer wsp-button bg-greencode-wsp">
+          <i class="relative text-4xl text-white fab fa-whatsapp"></i>
+        </div>
+      </div>
+      <style>
+        .active{
+          transform: translate(0) !important;
+        }
+      </style>
+      <div class="fixed z-40 overflow-hidden bg-white contenedor-chat w-80 h-72 bottom-28 right-10 rounded-xl" style="transition: transform 0.3s ease-in-out;transform: translate(115%);">
+        <div class="relative flex flex-col justify-between w-full h-full bg-cover contenido-chat" style="background-image: url(images/wsp-wallpaper.jpg);">
+          <div class="z-10 flex items-center justify-start p-3 bg-gray-300 dark:bg-gray-600 top">
+            <div class="absolute cursor-pointer close-button top-5 right-5"><i class="text-2xl text-black fas fa-times dark:text-white"></i></div><img src="images/carpa.png" class="h-10 p-1 mr-3 bg-white border border-white w-11" style="border-radius: 50%;"/>
+            <div class="flex flex-col estado-chat"><strong class="block mb-1 text-lg font-medium leading-4 dark:text-white">Edullka</strong><span class="text-sm leading-3 dark:text-white">En línea</span></div>
+          </div>
+          <div class="z-10 flex items-center justify-start p-3 bg-gray-300 dark:bg-gray-600 bottom">
+            <textarea class="p-2 leading-5 bg-white border border-white border-solid outline-none appearance-none resize-none rounded-xl h-11" style="width: calc(100% - 35px);" id="mensaje" cols="30" rows="1" placeholder="Escribe un mensaje aquí"></textarea>
+            <div class="cursor-pointer send-button" id="send-button">
+              <i class="block ml-3 text-2xl transform rotate-45 dark:text-white bi bi-cursor-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <!-- Main -->
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
     </style>
     <main class="mt-16 md:mx-14 lg:mx-24" style="font-family: 'Roboto', sans-serif;">
+      <style>
+        .imagen-content{
+          position: fixed;
+          background: rgba(0,0,0,.6);
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(110%);
+          transition: transform .2s ease-in-out;
+          z-index: 1000;
+        }
+        .show{
+          transform: translate(0);
+        }
+        .agregar-imagen{
+          object-fit: contain;
+          width: 60%;
+          border-radius: 10px;
+          transform: scale(0);
+          transition: transform .3s .2s;
+        }
+        .showImage{
+          transform: scale(1);
+        }
+        .close{
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          width: 40px;
+          cursor: pointer;
+        }
+      </style>
+      <section class="imagen-content" alt="">
+        <img src="images/close.svg" alt="" class="close">
+        <img src="images/header-code-2.webp" alt="" class="agregar-imagen">
+      </section>
         <div class="py-12 bg-white dark:bg-gray-800">
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="text-center md:text-left">
@@ -110,13 +173,13 @@
                     <img src="/images/python.webp" alt="" class="object-contain w-48 h-48 xl:w-52 xl:h-52" />
                   </div>
                   <div class="px-4 mt-5 md:flex-grow md:mt-0 lg:px-6">
-                    <div class="mb-2 text-lg font-medium text-orange-500 uppercase">
+                    <div class="mb-2 text-lg font-medium text-center text-orange-500 uppercase md:text-left">
                       Programación
                     </div>
                     <div class="text-base text-justify text-gray-800 lg:text-left dark:text-gray-200">
                       Python es un lenguaje de programación que te permite trabajar rápidamente e integrar sistemas de forma más eficaz. Este puede ser fácil de aprender, ya sea que programe por primera vez o tenga experiencia con otros lenguajes. (<a href="https://www.python.org/" target="_blank" class="text-blue-700 dark:text-blue-500">python.org</a>)
                     </div>
-                    <div class="flex-col">
+                    <div class="">
                       <div class="flex flex-wrap w-full mt-3 text-sm lg:mt-1">
                         <div class="px-2 py-1 my-1 mr-2 bg-gray-200 rounded-lg dark:text-gray-400 dark:bg-gray-900">Multiparadigma</div>
                         <div class="px-2 py-1 my-1 mr-2 bg-gray-200 rounded-lg dark:text-gray-400 dark:bg-gray-900">Orientado a objetos</div>
@@ -128,6 +191,9 @@
                     <div class="flex flex-wrap items-center justify-center w-full text-sm md:justify-start lg:mt-1">
                       <div class="py-1 my-1 mr-2 dark:text-gray-400">Última versión:</div>
                       <div class="flex items-center justify-center px-2 py-1 my-1 mr-2 bg-gray-200 rounded-lg dark:text-gray-400 dark:bg-gray-900"><a href="https://www.python.org/downloads/release/python-391/" target="_blank">3.9.1</a></div>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center w-full mt-2 md:justify-start">
+                      <button class="flex items-center justify-center text-xl md:text-base px-6 py-2 md:px-5 md:py-1.5 text-white bg-orange-500 dark:bg-yellow-500 rounded-md" type="submit">Inscríbete ahora</button>
                     </div>
                   </div>
                 </div>
@@ -199,7 +265,7 @@
                         <div class="inline-block w-3 h-3 mr-2 bg-green-400 rounded-full"></div>
                     </div>
                     <div class="px-5 py-6 pr-20 break-all xl:text-lg code">
-                      <p><span  class="text-purplecode dark:text-yellowcode">def </span><span class="text-bluecode-light dark:text-bluecode">fibonacci</span>(<span class="text-bluecode-light dark:text-bluecode">n</span>):</p>
+                      <p><span class="text-purplecode dark:text-yellowcode">def </span><span class="text-bluecode-light dark:text-bluecode">fibonacci</span>(<span class="text-bluecode-light dark:text-bluecode">n</span>):</p>
                       <p>&nbsp&nbsp&nbsp&nbsp<span class="text-redcode-light dark:text-bluecode">a</span>, <span class="text-redcode-light dark:text-bluecode">b </span><span class="text-bluecode-light dark:text-greencode">= </span><span class="text-browncode dark:text-redcode-dark">0</span>, <span class="text-browncode dark:text-redcode-dark">1</span></p>
                       <p>&nbsp&nbsp&nbsp&nbsp<span class="text-purplecode dark:text-yellowcode">while </span><span class="text-redcode-light dark:text-bluecode">a </span><span class="dark:text-greencode">&lt;</span><span class="text-redcode-light dark:text-bluecode"> n</span>:</p>
                       <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="text-redcode dark:text-greencode">print</span>(<span class="text-redcode-light dark:text-bluecode">a</span>, <span class="text-redcode-light dark:text-bluecode"> end</span><span class="text-bluecode-light dark:text-greencode">=</span><span class="text-greencode-dark dark:text-bluecode">' '</span>)</p>
@@ -252,7 +318,12 @@
                           Inversión
                         </dt>
                         <dd class="mt-1 text-base text-gray-900 sm:mt-0 dark:text-white sm:col-span-2">
-                          S/. 100
+                          <div>
+                            <span class="text-lg font-medium text-orange-500">S/</span>&nbsp<span class="text-2xl font-bold text-orange-500">84</span>&nbsp&nbsp&nbsp<span class="text-gray-400 line-through dark:text-gray-500">S/ 120</span>&nbsp&nbsp&nbsp<span class="text-sm font-semibold">30% dto</span>&nbsp&nbsp<span class="text-sm">(Alumnos UNI)</span>&nbsp&nbsp&nbsp<span id="app"><i class="text-lg fas fa-info-circle" v-bind:title="message"></i></span>
+                          </div>
+                          <div>
+                            <span class="text-lg font-medium text-orange-500">S/</span>&nbsp<span class="text-2xl font-bold text-orange-500">60</span>&nbsp&nbsp&nbsp<span class="text-gray-400 line-through dark:text-gray-500">S/ 120</span>&nbsp&nbsp&nbsp<span class="text-sm font-semibold">50% dto</span>&nbsp&nbsp<span class="text-sm">(Externos)</span>&nbsp&nbsp&nbsp<span id="app2"><i class="text-lg fas fa-info-circle" v-bind:title="message"></i></span>
+                          </div>
                         </dd>
                       </div>
                       <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -267,59 +338,109 @@
                         <dt class="text-sm font-medium text-gray-600 dark:text-gray-300">
                           Certificado
                         </dt>
-                        <dd class="mt-1 text-base text-gray-900 dark:text-white sm:mt-0 sm:col-span-2">
-                          Sí
+                        <dd class="flex items-center justify-between mt-1 text-base text-gray-900 dark:text-white sm:mt-0 sm:col-span-2">
+                          <div class="flex items-center flex-1 w-0">
+                            <span class="flex-1 w-0">
+                              Sí (Online)
+                            </span>
+                          </div>
+                          <div class="btnOpen flex-shrink-0 ml-4 cursor-pointer rounded-md bg-orange-500 dark:bg-yellow-500 px-4 py-1.5">
+                            <p class="font-medium text-white">
+                              Ver Certificado
+                            </p>
+                          </div>
                         </dd>
                       </div>
                       <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500 dark:text-gray-300">
                           Tutores
                         </dt>
-                        <dd class="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2"> <!-- iconos redes sociales fb-linkedin-github -->
+                        <dd class="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
                           <ul class="border border-gray-200 divide-y divide-gray-300 rounded-md">
 
                             <li class="flex items-center py-3 pl-3 pr-4 text-sm">
-                                <div class="flex items-center justify-center w-10 h-10">
+                                <div class="flex items-center justify-center flex-initial w-10 h-10">
                                   <img src="/images/perfil-jhomar astuyauri.webp" alt="" class="object-cover w-10 h-10 rounded-full" />
                                 </div>
-                                <div class="flex-col mt-4 md:flex-row lg:text-black md:mt-0 md:flex md:items-center md:justify-center">
+                                <div class="flex-col flex-initial md:flex-row lg:text-black md:flex md:items-center md:justify-center">
                                   <div class="ml-4 text-base font-base dark:text-white">Jhomar Astuyauri</div>
+                                </div>
+                                <div class="flex-auto">
+                                  <ul class="flex items-center justify-end w-full">
+                                    <li class="mx-3"><a href="https://www.facebook.com/jhomar.astuyauriherencia.12/" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-facebook"></i></a></li>
+                                    <li class="mx-3"><a href="https://www.linkedin.com/in/jhomar-astuyauri/" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-linkedin"></i></a></li>
+                                    <li class="mx-3"><a href="#" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-github"></i></a></li>
+                                  </ul>
                                 </div>
                             </li>
 
                             <li class="flex items-center py-3 pl-3 pr-4 text-sm">
-                              <div class="flex items-center justify-center w-10 h-10">
+                              <div class="flex items-center justify-center flex-initial w-10 h-10">
                                 <img src="/images/perfil-josé guerra.webp" alt="" class="object-cover w-10 h-10 rounded-full" />
                               </div>
-                              <div class="flex-col mt-4 md:flex-row lg:text-black md:mt-0 md:flex md:items-center md:justify-center">
+                              <div class="flex-col flex-initial md:flex-row lg:text-black md:flex md:items-center md:justify-center">
                                 <div class="ml-4 text-base font-base dark:text-white">José Guerra</div>
                               </div>
+                              <div class="flex-auto">
+                                <ul class="flex items-center justify-end w-full">
+                                  <li class="mx-3"><a href="https://www.facebook.com/josecarlos.guerramartinez.5/" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-facebook"></i></a></li>
+                                  <li class="mx-3"><a href="https://www.linkedin.com/in/jos%C3%A9-carlos-guerra-martinez-7903b41b2/" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-linkedin"></i></a></li>
+                                  <li class="mx-3"><a href="https://github.com/JoCGM09" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-github"></i></a></li>
+                                </ul>
+                              </div>
                             </li>
 
                             <li class="flex items-center py-3 pl-3 pr-4 text-sm">
-                              <div class="flex items-center justify-center w-10 h-10">
+                              <div class="flex items-center justify-center flex-initial w-10 h-10">
                                 <img src="/images/perfil-josé ñiquen.webp" alt="" class="object-cover w-10 h-10 rounded-full" />
                               </div>
-                              <div class="flex-col mt-4 md:flex-row lg:text-black md:mt-0 md:flex md:items-center md:justify-center">
+                              <div class="flex-col flex-initial md:flex-row lg:text-black md:flex md:items-center md:justify-center">
                                 <div class="ml-4 text-base font-base dark:text-white">José Ñiquen</div>
                               </div>
+                              <div class="flex-auto">
+                                <ul class="flex items-center justify-end w-full">
+                                  <li class="mx-3"><a href="https://www.facebook.com/jose.niquen.f" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-facebook"></i></a></li>
+                                  <li class="mx-3"><a href="https://www.linkedin.com/in/jose-ñiquen" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-linkedin"></i></a></li>
+                                  <li class="mx-3"><a href="https://github.com/joseniquen08" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-github"></i></a></li>
+                                </ul>
+                              </div>
                             </li>
 
                             <li class="flex items-center py-3 pl-3 pr-4 text-sm">
-                              <div class="flex items-center justify-center w-10 h-10">
+                              <div class="flex items-center justify-center flex-initial w-10 h-10">
                                 <img src="/images/alejandro_taboada.webp" alt="" class="object-cover w-10 h-10 rounded-full" />
                               </div>
-                              <div class="flex-col mt-4 md:flex-row lg:text-black md:mt-0 md:flex md:items-center md:justify-center">
+                              <div class="flex-col flex-initial md:flex-row lg:text-black md:flex md:items-center md:justify-center">
                                 <div class="ml-4 text-base font-base dark:text-white">Cristopher Rufasto</div>
                               </div>
+                              <div class="flex-auto">
+                                <ul class="flex items-center justify-end w-full">
+                                  <li class="mx-3"><a href="#" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-facebook"></i></a></li>
+                                  <li class="mx-3"><a href="#" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-linkedin"></i></a></li>
+                                  <li class="mx-3"><a href="#" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-github"></i></a></li>
+                                </ul>
+                              </div>
                             </li>
 
                             <li class="flex items-center py-3 pl-3 pr-4 text-sm">
-                              <div class="flex items-center justify-center w-10 h-10">
+                              <div class="flex items-center justify-center flex-initial w-10 h-10">
                                 <img src="/images/alejandro_taboada.webp" alt="" class="object-cover w-10 h-10 rounded-full" />
                               </div>
-                              <div class="flex-col mt-4 md:flex-row lg:text-black md:mt-0 md:flex md:items-center md:justify-center">
+                              <div class="flex-col flex-initial md:flex-row lg:text-black md:flex md:items-center md:justify-center">
                                 <div class="ml-4 text-base font-base dark:text-white">Ailton Salguero</div>
+                              </div>
+                              <div class="flex-auto">
+                                <ul class="flex items-center justify-end w-full">
+                                  <li class="mx-3"><a href="#" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-facebook"></i></a></li>
+                                  <li class="mx-3"><a href="#" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-linkedin"></i></a></li>
+                                  <li class="mx-3"><a href="#" target="_blank"><i class="text-2xl text-gray-400 hover:text-gray-500 fab fa-github"></i></a></li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="flex items-center py-3 pl-3 pr-4">
+                              <span class="underline dark:text-white">¿Interesado en ser tutor?</span>&nbsp&nbsp&nbsp
+                              <div class="px-6 py-1.5 font-medium text-white bg-orange-500 dark:bg-yellow-500 rounded-md">
+                                <a href="#" class="text-center">Click aquí</a>
                               </div>
                             </li>
                           </ul>
@@ -354,7 +475,7 @@
                           <li>Tipos de datos (booleano, entero, flotante, listas, tuplas, diccionarios, conjuntos SET)</li>
                         </ul>
                       </div>
-                      <div class="flex flex-col items-center justify-center px-8 py-4 border-b border-gray-300 dark:border-gray-200 md:border-r">
+                      <div class="flex flex-col items-center justify-center px-8 py-4 border-b border-gray-300 dark:border-gray-200 lg:border-none md:border-r">
                         <p class="mb-2 text-xl font-medium text-orange-500">Sección 3</p>
                         <ul class="text-base dark:text-gray-100">
                           <li>Entrada y salida estándar.</li>
@@ -376,7 +497,7 @@
                           <li>Módulos vs Clases.</li>
                         </ul>
                       </div>
-                      <div class="flex flex-col items-center justify-center px-8 py-4 border-b border-gray-300 dark:border-gray-200">
+                      <div class="flex flex-col items-center justify-center px-8 py-4 border-b border-gray-300 dark:border-gray-200 lg:border-t">
                         <p class="mb-2 text-xl font-medium text-orange-500">Sección 6</p>
                         <ul class="text-base dark:text-gray-100">
                           <li>Manejar ficheros de datos con CSV.</li>

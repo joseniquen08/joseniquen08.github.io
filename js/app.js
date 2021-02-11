@@ -34,6 +34,30 @@ popUpMenu = () => {
     })
 }
 
+popUpWsp = () => {
+
+    let btnClosePopUp = document.querySelector('.close-button');
+    let btnOpenPopUp = document.querySelector('.wsp-button');
+    let popUp = document.querySelector('.contenedor-chat');
+    let btnSend = document.getElementById('send-button');
+
+    btnClosePopUp.addEventListener("click", () => {
+        popUp.classList.toggle('active');
+    });
+
+    btnOpenPopUp.addEventListener("click", () => {
+        popUp.classList.toggle('active');
+    });
+
+    btnSend.addEventListener("click", () => {
+        let msg = document.getElementById('mensaje').value;
+        let realmsg = msg.replace(/ /g, "%20");
+        let telefono = "51933839178";
+        window.open('https://api.whatsapp.com/send?phone='+telefono+'&text='+realmsg, '_blank');
+    });
+}
+
+popUpWsp();
 // popUpProfile();
 popUpMenu();
 
@@ -83,3 +107,40 @@ if (localStorage.theme === 'dark' || (!'theme' in localStorage && window.matchMe
 } else if (localStorage.theme === 'dark') {
     document.querySelector('html').classList.add('dark')
 }
+
+const btnOpen = document.querySelector('.btnOpen')
+const imagenesLight = document.querySelector('.agregar-imagen')
+const contenedorLight = document.querySelector('.imagen-content')
+
+btnOpen.addEventListener('click', ()=>{
+    aparecerImagen('images/header-code-2.webp')
+})
+
+contenedorLight.addEventListener('click', (e)=>{
+    if(e.target != imagenesLight){
+        contenedorLight.classList.toggle('show')
+        imagenesLight.classList.toggle('showImage')
+    }
+})
+
+const aparecerImagen = (imagen)=>{
+    imagenesLight.src = imagen;
+    contenedorLight.classList.toggle('show')
+    imagenesLight.classList.toggle('showImage')
+    buttonInicio1.style.opacity = '0'
+}
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Oferta especial por tiempo limitado'
+    }
+})
+
+var app2 = new Vue({
+    el: '#app2',
+    data: {
+        message: 'Oferta especial por tiempo limitado'
+    }
+})
+
