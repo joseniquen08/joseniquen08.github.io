@@ -52,7 +52,7 @@
                 <img class="hidden w-auto h-10 lg:block" style="filter: saturate(200%);"
                   src="images/logo-edullka-header.webp" alt="Workflow">
               </div>
-              <div class="flex-1 hidden sm:block sm:ml-6">
+              <div class="flex-1 hidden md:pr-6 sm:block sm:ml-6">
                 <div class="flex items-center justify-end space-x-4 font-nav">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                   <a href="https://joseniquen08.github.io/#" class="px-3 py-2 text-xl font-medium tracking-wide text-gray-800 uppercase bg-gray-200 rounded-md dark:text-white dark:bg-black">Inicio</a>
@@ -63,10 +63,44 @@
                 </div>
               </div>
             </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <button id="switchTheme" class="flex items-center justify-center w-10 h-10 text-yellow-500 focus:outline-none">
+            <!-- <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button class="flex items-center justify-center w-10 h-10 text-yellow-500 focus:outline-none">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
               </button>
+            </div> -->
+            <style>
+
+              .toggle-path {
+                  transition: background 0.3s ease-in-out;
+              }
+              .toggle-circle {
+                  top: 0.2rem;
+                  left: 0.25rem;
+                  transition: all 0.3s ease-in-out;
+              }
+              input:checked ~ .toggle-circle {
+                  transform: translateX(100%);
+              }
+              input:checked ~ .toggle-path {
+                  background-color:#81E6D9;
+              }
+            </style>
+            <div class="flex flex-col justify-center items-center">
+              <div class="mt-1 font-medium font-nav text-base text-gray-600 dark:text-gray-300">MODO</div>
+              <label for="toogleButton" class="flex items-center cursor-pointer">
+                <!-- toggle -->
+                <div class="relative">
+                  <input id="toogleButton" type="checkbox" class="hidden" />
+                  <!-- path -->
+                  <div
+                    class="toggle-path bg-gray-200 w-9 h-5 rounded-full shadow-inner"
+                  ></div>
+                  <!-- crcle -->
+                  <div
+                    class="toggle-circle absolute w-3.5 h-3.5 bg-white rounded-full shadow inset-y-0 left-0"
+                  ></div>
+                </div>
+              </label>
             </div>
           </div>
         </div>
@@ -100,7 +134,7 @@
                   <span class="block xl:inline">de aprendizaje</span>
                 </h1>
                 <p class="mb-4 text-xl text-center text-gray-500 dark:text-white lg:text-left lg:mt-8 lg:text-xl sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Aprovecha la oferta del <span class="font-bold text-yellow-500">Campamento de Python</span> por tiempo limitado: Hasta 50% de descuento
+                  Aprovecha la oferta del <span class="font-bold text-yellow-500">Campamento de Python</span> por tiempo limitado: 100% de descuento (GRATUITO)
                 </p>
                 <div class="w-full mb-6 cuenta lg:mt-4">
                   <div id="cuenta" class="flex items-center justify-center w-full text-2xl font-semibold text-yellow-500 lg:items-start lg:justify-start lg:text-3xl">
@@ -113,7 +147,7 @@
                 </div>
                 <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div class="rounded-md shadow">
-                    <a href="#" class="flex items-center justify-center w-full h-12 px-8 py-3 text-base font-medium text-white bg-yellow-500 border border-transparent rounded-md sm:h-full hover:bg-yellow-600 md:py-4 md:text-lg md:px-10">
+                    <a href="https://forms.gle/4bdZokf4Ai9NPSHE7" target="_blank" class="flex items-center justify-center w-full h-12 px-8 py-3 text-base font-medium text-white bg-yellow-500 border border-transparent rounded-md sm:h-full hover:bg-yellow-600 md:py-4 md:text-lg md:px-10">
                       ¡Lo quiero!
                     </a>
                   </div>
@@ -302,7 +336,7 @@
 
                 <div class="flex pb-6 mx-4 mt-2 mb-4 space-x-3 text-sm font-medium">
                   <div class="flex flex-auto space-x-3">
-                    <button class="flex items-center justify-center w-1/2 text-white bg-yellow-500 rounded-md h-9" type="submit">Inscríbete</button>
+                    <button class="flex items-center justify-center w-1/2 text-white bg-yellow-500 rounded-md h-9" type="submit"><a href="https://forms.gle/4bdZokf4Ai9NPSHE7" target="_blank">Inscríbete</a></button>
                     <button class="flex items-center justify-center w-1/2 border border-gray-300 rounded-md dark:text-gray-300 h-9" type="button"><a href="informacion">Información</a></button>
                   </div>
                 </div>
@@ -570,10 +604,10 @@
           <div class="w-8 h-0.5 mb-4 bg-gray-300"></div>
           <div class="text-3xl font-bold text-center dark:text-white">"Si puedes imaginarlo, puedes programarlo."</div>
           <div class="grid h-auto grid-cols-1 mt-6 md:flex md:items-center md:justify-center">
-            <div class="flex items-center justify-center">
+            <div class="flex flex-initial items-center justify-center">
               <img src="/images/alejandro_taboada.webp" alt="" class="object-cover w-10 h-10 rounded-full" />
             </div>
-            <div class="flex-col w-full mt-4 text-yellow-500 md:flex-row lg:text-black md:mt-0 md:flex md:items-center md:justify-center">
+            <div class="flex-col flex-row w-full mt-4 text-yellow-500 md:flex-row lg:text-black md:mt-0 md:flex md:items-center md:justify-center">
               <div class="text-xl font-medium text-center dark:text-white md:text-lg md:ml-4">Alejandro Taboada</div>
               <div class="hidden mx-1 text-3xl font-bold text-yellow-500 md:block">/</div>
               <div class="text-lg text-center text-gray-500 dark:text-gray-400 lg:mx-1">Programación ATS</div>

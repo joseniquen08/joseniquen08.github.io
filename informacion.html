@@ -49,12 +49,12 @@
             </div>
             <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
               <div class="flex items-center flex-shrink-0 sm:flex">
-                <img class="block w-auto h-8 lg:hidden"
-                  src="images/logo-edullka-header.webp" alt="Workflow">
-                <img class="hidden w-auto h-10 lg:block" style="filter: saturate(200%);"
-                  src="images/logo-edullka-header.webp" alt="Workflow">
+                <a href="https://joseniquen08.github.io/"><img class="block w-auto h-8 lg:hidden"
+                  src="images/logo-edullka-header.webp" alt="Workflow"></a>
+                <a href="https://joseniquen08.github.io/"><img class="hidden w-auto h-10 lg:block" style="filter: saturate(200%);"
+                  src="images/logo-edullka-header.webp" alt="Workflow"></a>
               </div>
-              <div class="flex-1 hidden sm:block sm:ml-6">
+              <div class="flex-1 hidden md:pr-6 sm:block sm:ml-6">
                 <div class="flex items-center justify-end space-x-4 font-nav">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                   <a href="https://joseniquen08.github.io/" class="px-3 py-2 text-xl font-medium tracking-wide text-gray-600 uppercase rounded-md dark:text-gray-300 hover:bg-gray-700 hover:text-white">Inicio</a>
@@ -65,8 +65,7 @@
                 </div>
               </div>
             </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            
+            <!-- <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button id="switchTheme" class="flex items-center justify-center w-10 h-10 text-yellow-500 focus:outline-none">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
@@ -74,6 +73,40 @@
                   </path>
                 </svg>
               </button>
+            </div> -->
+            <style>
+
+              .toggle-path {
+                  transition: background 0.3s ease-in-out;
+              }
+              .toggle-circle {
+                  top: 0.2rem;
+                  left: 0.25rem;
+                  transition: all 0.3s ease-in-out;
+              }
+              input:checked ~ .toggle-circle {
+                  transform: translateX(100%);
+              }
+              input:checked ~ .toggle-path {
+                  background-color:#81E6D9;
+              }
+            </style>
+            <div class="flex flex-col justify-center items-center">
+              <div class="mt-1 font-medium font-nav text-base text-gray-600 dark:text-gray-300">MODO</div>
+              <label for="toogleButton" class="flex items-center cursor-pointer">
+                <!-- toggle -->
+                <div class="relative">
+                  <input id="toogleButton" type="checkbox" class="hidden" />
+                  <!-- path -->
+                  <div
+                    class="toggle-path bg-gray-200 w-9 h-5 rounded-full shadow-inner"
+                  ></div>
+                  <!-- crcle -->
+                  <div
+                    class="toggle-circle absolute w-3.5 h-3.5 bg-white rounded-full shadow inset-y-0 left-0"
+                  ></div>
+                </div>
+              </label>
             </div>
           </div>
         </div>
@@ -195,8 +228,8 @@
                       <div class="py-1 my-1 mr-2 dark:text-gray-400">Última versión:</div>
                       <div class="flex items-center justify-center px-2 py-1 my-1 mr-2 bg-gray-200 rounded-lg dark:text-gray-400 dark:bg-gray-900"><a href="https://www.python.org/downloads/release/python-391/" target="_blank">3.9.1</a></div>
                     </div>
-                    <div class="flex flex-wrap items-center justify-center w-full mt-2 md:justify-start">
-                      <button class="flex items-center justify-center text-xl px-6 py-2 md:px-5 md:py-1.5 text-white bg-orange-500 dark:bg-yellow-500 rounded-md" type="submit">Inscríbete ahora</button>
+                    <div class="flex flex-wrap items-center justify-center w-full mt-2 md:px-8 md:justify-end">
+                      <button class="flex items-center justify-center text-xl px-6 py-2 md:px-5 md:py-1.5 text-white bg-orange-500 dark:bg-yellow-500 rounded-md" type="submit"><a href="https://forms.gle/4bdZokf4Ai9NPSHE7" target="_blank">Inscríbete ahora</a></button>
                     </div>
                   </div>
                 </div>
@@ -208,10 +241,11 @@
                 </div>
 
                 <div class="mx-4 mt-6 overflow-hidden bg-white border border-gray-300 shadow dark:border-gray-800 dark:bg-gray-900 lg:mx-0 sm:rounded-lg">
-                  <div class="px-4 py-5 sm:px-6">
+                  <div class="flex items-center justify-between px-4 py-5 sm:px-6">
                     <h3 class="text-2xl font-medium leading-6 text-gray-900 dark:text-white">
                       Detalles
                     </h3>
+                    <h3 class="text-2xl font-bold bg-gray-100 p-2 rounded-lg leading-6 text-gray-800 dark:bg-gray-700 dark:text-white">FREE</h3>
                   </div>
                   <div class="border-t border-gray-300 dark:border-gray-200">
                     <dl class="divide-y divide-gray-300">
@@ -220,7 +254,7 @@
                           Duración
                         </dt>
                         <dd class="mt-1 text-base text-gray-900 dark:text-white sm:mt-0 sm:col-span-2">
-                          10 días
+                          12 días (Lunes a Sábado) - 2 semanas
                         </dd>
                       </div>
                       <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -228,10 +262,10 @@
                           Horas aproximadas
                         </dt>
                         <dd class="mt-1 text-base text-gray-900 dark:text-white sm:mt-0 sm:col-span-2">
-                          +30 horas
+                          24 horas
                         </dd>
                       </div>
-                      <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                      <!-- <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-600 dark:text-gray-300">
                           Inversión
                         </dt>
@@ -243,10 +277,10 @@
                             <span class="text-lg font-medium text-orange-500">S/</span>&nbsp<span class="text-2xl font-bold text-orange-500">84</span>&nbsp&nbsp&nbsp<span class="text-gray-400 line-through dark:text-gray-500">S/ 120</span>&nbsp&nbsp&nbsp<span class="text-sm font-semibold">30% dto</span>&nbsp&nbsp<span class="text-sm">(Externos)</span>&nbsp&nbsp&nbsp<span id="app2"><i class="text-lg fas fa-info-circle" v-bind:title="message"></i></span>
                           </div>
                         </dd>
-                      </div>
+                      </div> -->
                       <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                          Concurso final
+                          Proyectos
                         </dt>
                         <dd class="mt-1 text-base text-gray-900 dark:text-white sm:mt-0 sm:col-span-2">
                           Sí
@@ -259,7 +293,7 @@
                         <dd class="flex items-center justify-between mt-1 text-base text-gray-900 dark:text-white sm:mt-0 sm:col-span-2">
                           <div class="flex items-center flex-1 w-0">
                             <span class="flex-1 w-0">
-                              Sí (Online)
+                              Sí (Participación)
                             </span>
                           </div>
                           <div class="btnOpen flex-shrink-0 ml-4 cursor-pointer rounded-md bg-orange-500 dark:bg-yellow-500 px-4 py-1.5">
@@ -358,7 +392,7 @@
                             <li class="flex items-center py-3 pl-3 pr-4">
                               <span class="underline text-sm md:text-base dark:text-white">¿Interesado en ser tutor?</span>&nbsp&nbsp&nbsp
                               <div class="px-6 py-1.5 font-medium text-white bg-orange-500 dark:bg-yellow-500 rounded-md">
-                                <a href="#" class="text-center text-sm md:text-base">Click aquí</a>
+                                <a href="https://forms.gle/QhZuG38Bxg4tNVE39" target="_blank" class="text-center text-sm md:text-base">Click aquí</a>
                               </div>
                             </li>
                           </ul>
@@ -441,14 +475,18 @@
                           <li>Numpy, mathplotlib y pandas.</li>
                         </ul>
                       </div>
-                      <div class="items-center justify-center hidden lg:flex"></div>
+                      <div class="items-center justify-center hidden lg:flex">
+
+                      </div>
                       <div class="flex flex-col items-center justify-center px-8 py-4 border-gray-300 dark:border-gray-200 md:border-l lg:border-r">
                         <p class="mb-2 text-xl font-medium text-orange-500">Sección 10</p>
                         <ul class="text-base dark:text-gray-100">
                           <li>Concurso.</li>
                         </ul>
                       </div>
-                      <div class="items-center justify-center hidden border-gray-300 dark:border-gray-200 lg:flex lg:border-t"></div>
+                      <div class="items-center justify-center hidden border-gray-300 dark:border-gray-200 lg:flex lg:border-t">
+
+                      </div>
                     </div>
                   </div>
                 </div>
