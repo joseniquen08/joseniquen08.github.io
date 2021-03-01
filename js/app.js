@@ -129,24 +129,3 @@ const aparecerImagen = (imagen)=>{
     imagenesLight.classList.toggle('showImage')
     buttonInicio1.style.opacity = '0'
 }
-
-var app = new Vue({
-    el: '#app',
-    data: {
-        message: 'Oferta especial por tiempo limitado'
-    }
-})
-
-var app2 = new Vue({
-    el: '#app2',
-    data: {
-        message: 'Oferta especial por tiempo limitado'
-    }
-})
-
-var app3 = new Vue({
-    el: "#diaInicio",
-    data: {
-        message: new Date().toLocaleDateString()
-    }
-})

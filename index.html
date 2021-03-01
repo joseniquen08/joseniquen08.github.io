@@ -45,7 +45,7 @@
                 </svg>
               </button>
             </div>
-            <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
+            <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start border-r-2 mr-6">
               <div class="flex items-center flex-shrink-0 sm:flex">
                 <img class="block w-auto h-8 lg:hidden"
                   src="images/logo-edullka-header.webp" alt="Workflow">
@@ -53,7 +53,16 @@
                   src="images/logo-edullka-header.webp" alt="Workflow">
               </div>
               <div class="flex-1 hidden md:pr-6 sm:block sm:ml-6">
-                <div class="flex items-center justify-end space-x-4 font-nav">
+                <style>
+                  @font-face {
+                    font-family: "Oswald";
+                    src: url("/font/Oswald-Medium.ttf");
+                  }
+                  .font-nav-1{
+                    font-family: 'Oswald';
+                  }
+                </style>
+                <div class="flex items-center justify-end space-x-4 font-nav-1">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                   <a href="https://joseniquen08.github.io/#" class="px-3 py-2 text-xl font-medium tracking-wide text-gray-800 uppercase bg-gray-200 rounded-md dark:text-white dark:bg-black">Inicio</a>
                   <a href="https://joseniquen08.github.io/#campamentos"
@@ -85,8 +94,8 @@
                   background-color:#81E6D9;
               }
             </style>
-            <div class="flex flex-col justify-center items-center">
-              <div class="mt-1 font-medium font-nav text-base text-gray-600 dark:text-gray-300">MODO</div>
+            <div class="flex justify-center items-center">
+              <!-- <div class="mt-1 font-medium font-nav text-base text-gray-600 dark:text-gray-300">MODO</div> -->
               <label for="toogleButton" class="flex items-center cursor-pointer">
                 <!-- toggle -->
                 <div class="relative">
@@ -321,8 +330,8 @@
                     <img class="inline-block object-cover w-10 h-10 rounded-full ring-2 ring-white" src="/images/perfil-jhomar astuyauri.webp" alt="">
                     <img class="inline-block object-cover w-10 h-10 rounded-full ring-2 ring-white" src="/images/perfil-josé guerra.webp" alt="">
                     <img class="inline-block object-cover w-10 h-10 rounded-full ring-2 ring-white" src="/images/perfil-josé ñiquen.webp" alt="">
-                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
                   </div>
                   <div class="flex-col">
                     <div class="font-medium text-black dark:text-gray-300">
@@ -344,7 +353,7 @@
       
               <div class="flex-col col-span-2 border border-gray-300 shadow-xl opacity-60 dark:border-transparent dark:bg-gray-900 rounded-xl">
                 <div class="relative flex items-center justify-center w-full bg-gray-200 rounded-b-none dark:bg-gray-700 rounded-xl h-60">
-                  <img src="/images/java.webp" alt="" class="object-contain w-48 h-48" />
+                  <img src="/images/web.webp" alt="" class="object-contain w-48 h-48" />
                 </div>
 
                 <div class="mx-4 my-6 mb-2">
@@ -352,7 +361,7 @@
                     Programación
                   </div>
                   <dt class="text-xl font-bold leading-6 text-gray-900 dark:text-white">
-                    Campamento de Java
+                    Campamento de HTML5, CSS3 y JavaScript
                   </dt>
                   <!-- <dd class="lg:mt-2 mt-0.5 text-base text-gray-500">
                     Enseñanza de cursos con estilo de campamento. Adaptamos esta actividad y lo llevamos a un entorno virtual.
@@ -361,18 +370,18 @@
 
                 <div class="flex items-center w-full">
                   <div class="flex items-start justify-start px-2 py-4 mx-4 -space-x-2 overflow-hidden">
-                    <img class="inline-block object-cover w-10 h-10 rounded-full ring-2 ring-white" src="/images/perfil-jhomar astuyauri.webp" alt="">
-                    <img class="inline-block object-cover w-10 h-10 rounded-full ring-2 ring-white" src="/images/perfil-josé guerra.webp" alt="">
-                    <img class="inline-block object-cover w-10 h-10 rounded-full ring-2 ring-white" src="/images/perfil-josé ñiquen.webp" alt="">
-                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
                   </div>
                   <div class="flex-col">
                     <div class="font-medium text-black dark:text-gray-300">
-                      Team Java
+                      Team Diseño Web
                     </div>
                     <div class="text-gray-500">
-                      X tutores
+                      5 tutores
                     </div>
                   </div>
                 </div>
@@ -404,18 +413,18 @@
 
                 <div class="flex items-center w-full">
                   <div class="flex items-start justify-start px-2 py-4 mx-4 -space-x-2 overflow-hidden">
-                    <img class="inline-block object-cover w-10 h-10 rounded-full ring-2 ring-white" src="/images/perfil-jhomar astuyauri.webp" alt="">
-                    <img class="inline-block object-cover w-10 h-10 rounded-full ring-2 ring-white" src="/images/perfil-josé guerra.webp" alt="">
-                    <img class="inline-block object-cover w-10 h-10 rounded-full ring-2 ring-white" src="/images/perfil-josé ñiquen.webp" alt="">
-                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
+                    <img class="inline-block w-10 h-10 rounded-full ring-2 ring-white" src="/images/user.webp" alt="">
                   </div>
                   <div class="flex-col">
                     <div class="font-medium text-black dark:text-gray-300">
                       Team C
                     </div>
                     <div class="text-gray-500">
-                      X tutores
+                      5 tutores
                     </div>
                   </div>
                 </div>
