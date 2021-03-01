@@ -16,6 +16,44 @@
     })
 }*/
 
+popUpCorreo = () => {
+    
+    let btnCorreo1 = document.querySelector('.correo-button-1');
+    let btnCorreo2 = document.querySelector('.correo-button-2');
+    let btnCorreo3 = document.querySelector('.correo-button-3');
+    let popUp1 = document.querySelector('.contenedor-correo-1');
+    let popUp2 = document.querySelector('.contenedor-correo-2');
+    let popUp3 = document.querySelector('.contenedor-correo-3');
+
+    btnCorreo1.addEventListener("click", () => {
+        popUp1.classList.toggle('hidden');
+        popUp1.classList.toggle('block');
+    });
+    btnCorreo2.addEventListener("click", () => {
+        popUp2.classList.toggle('hidden');
+        popUp2.classList.toggle('block');
+    });
+    btnCorreo3.addEventListener("click", () => {
+        popUp3.classList.toggle('hidden');
+        popUp3.classList.toggle('block');
+    });
+
+    window.addEventListener('click', e=>{
+        if(popUp1.classList.contains('block') && e.target!=popUp1 && e.target!=btnCorreo1){
+            popUp1.classList.toggle('hidden');
+            popUp1.classList.toggle("block");
+        }
+        if(popUp2.classList.contains('block') && e.target!=popUp2 && e.target!=btnCorreo2){
+            popUp2.classList.toggle('hidden');
+            popUp2.classList.toggle("block");
+        }
+        if(popUp3.classList.contains('block') && e.target!=popUp3 && e.target!=btnCorreo3){
+            popUp3.classList.toggle('hidden');
+            popUp3.classList.toggle("block");
+        }
+    })
+}
+
 popUpMenu = () => {
     
     let btnOpenPopUp = document.querySelector('.menu-button');
@@ -58,7 +96,7 @@ popUpWsp = () => {
 }
 
 popUpWsp();
-// popUpProfile();
+popUpCorreo();
 popUpMenu();
 
 simplyCountdown('#cuenta', {
